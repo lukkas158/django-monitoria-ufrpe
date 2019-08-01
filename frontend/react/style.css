@@ -1,3 +1,52 @@
-body {
-    background-color: green;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,body {
+    height: 100%;
+}
+
+
+.header {
+    min-height: 50px;
+    background-color: #32a883;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer {
+    width: 100%;
+    min-height: 50px;
+    background-color: #32a883;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo {
+    color: #2d6654;
+    font-size: 20px;
+}
+
+.register-form {
+    margin-top: 20px;
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.form-container {
+    width: 300px;
+}
+.form-container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-container form input {
+    margin: 5px;
 }
