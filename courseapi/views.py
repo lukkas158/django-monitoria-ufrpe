@@ -6,6 +6,14 @@ from .serializers import CourseSerializer
 
 
 class CourseList(generics.ListCreateAPIView):
-    queryset = Course.objects.all()
     serializer_class = CourseSerializer
+    def get_queryset(self):
+        name = self.request.query_params.get('name', None )
+        if( name is not None ):
+            print(name)
+            print(type(name))
+            return Course.objects.filter(name__icontains=name)
+        else:
+            return Course.objects.all()
+
 
