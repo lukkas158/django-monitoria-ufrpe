@@ -10,10 +10,12 @@ class CourseList(generics.ListCreateAPIView):
     def get_queryset(self):
         name = self.request.query_params.get('name', None )
         if( name is not None ):
-            print(name)
-            print(type(name))
             return Course.objects.filter(name__icontains=name)
         else:
             return Course.objects.all()
+
+class CourseDetail(generics.RetrieveAPIView):
+    serializer_class = CourseSerializer
+    queryset = Course.objects.all()
 
 
